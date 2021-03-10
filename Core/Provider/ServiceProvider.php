@@ -18,7 +18,7 @@ class ServiceProvider {
 
     public function registerRoutes(Router $router)
     {
-        require_once(app()->basePath('routes.php'));
+        $router->registerRoutes('web.php');
     }
     
 }
