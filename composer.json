@@ -1,0 +1,19 @@
+{
+    "name": "eliaspeters/pcent-framework",
+    "description": "PHP MVC Framework",
+    "authors": [
+        {
+            "name": "Elias Vincent Peters",
+            "email": "eliasvpeters@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "./"
+        },
+         "files": ["Core/Helpers/functions.php"]
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.2"
+    }
+}
