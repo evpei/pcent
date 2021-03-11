@@ -11,6 +11,7 @@ public function __construct(protected Application $app, protected Router $router
 public function handle(Request $request)
 {
     $this->app->instance('request', $request);
+
     $this->router->resolve($request);    
 }
 

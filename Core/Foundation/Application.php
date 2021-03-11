@@ -23,6 +23,8 @@ public function __construct(Router $router, ServiceProvider $serviceProvider, $b
     $this->router = $router;
     $this->serviceProvider = $serviceProvider;
     $this->basePath = $basePath;
+
+    $this->instance('application', $this);
 }
 
 static function run($basePath)

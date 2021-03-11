@@ -4,6 +4,7 @@ namespace App\Core\Http;
 
 use App\Core\Foundation\Application;
 use Closure;
+use App\Core\Support\View;
 
 class Router {
 
@@ -58,6 +59,11 @@ class Router {
 
             $action = $this->routes[$method][$path] ?? function() {echo "404 Not found";};
 
+            $response = call_user_func($action);
+            //if we return a view
+            View::render($response);
+            
+
             // get wildcard from path, so we have to take a look if there is a match, and we have to go in order
             // we must filter where [path] == [pathInRoute] || [pathInRoutes] == wildcard
             // so maybe
@@ -91,7 +97,7 @@ class Router {
 
             */
             
-            return call_user_func($action);
+            return $response;
     }
 
     public function registerRoutes(string $routesFile)

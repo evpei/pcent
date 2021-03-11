@@ -5,8 +5,7 @@ class Controller {
 
     public function go()
     {
-        echo 'go';
-        return 'go';
+        return view('index');
     }
 
     public function index()

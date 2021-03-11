@@ -1,10 +1,10 @@
 <?php
-require_once(__DIR__ . '/../vendor/autoload.php');
+$basePath = dirname(__DIR__); // fix this
+require_once($basePath . '/vendor/autoload.php');
 
 use App\Core\Http\Request;
 use App\Core\Foundation\Application;
 
-$basePath = __DIR__ . '/..'; // fix this
 
 $app = Application::run($basePath);
 
